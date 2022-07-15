@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios发送ajax请求</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.0.0-alpha.1/axios.js"></script>
+</head>
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>AJAX</button>
+    <script>
+       //配置baseURL
+ 
+        const btns=document.querySelectorAll('button');
+        btns[0].onclick=function(){
+            //GET请求
+        axios.get('http://127.0.0.1:8000/server',{
+
+            //URL参数
+        params:{
+        id:100,
+        vip:7
+        },
+        Headers:{
+name:'SUN',
+age:20
+        }
+        }).then(value=>{
+            console.log(value);
+           })
+
+        }
+        btns[1].onclick=function(){
+            axios.post('http://127.0.0.1:8000/server',{    
+                    username:'SUN',
+                    password:'123456'
+                },{
+                params:{
+
+                    id:200,
+                    vip:9
+                },
+                headers:{
+                    height:180,
+                    weight:50
+                }
+           
+            }).then(value=>{
+            console.log(value);
+           })
+        }
+        btns[2].onclick=function(){
+            axios({
+                method:'POST',
+                url:'http://127.0.0.1:8000/server',
+                param:{
+                    vip:10,
+                    level:30
+                },
+                headers:{
+                    a:100,
+                    b:200
+                },
+                data:{
+                    username:'admin',
+                    password:'admin'
+                }
+            }).then(response=>{
+                console.log(response);
+            })
+        }
+    </script>
+</body>
+</html>
