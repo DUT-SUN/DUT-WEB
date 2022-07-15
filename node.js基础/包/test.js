@@ -1,0 +1,5 @@
+const TIME=require("./格式化时间")
+const dt =new Date()
+// console.log(dt)
+const newDT=TIME.dateFormat(dt)
+console.log(newDT)
