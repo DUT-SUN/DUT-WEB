@@ -1,3 +1,0 @@
-https://learngitbranching.js.org/?locale=zh_CN
-https://regexone.com/
-https://sqlzoo.net/wiki/SQL_Tutorial
